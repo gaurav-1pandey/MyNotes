@@ -7,8 +7,9 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.mynotes.R
 import com.example.mynotes.database.Note
-import com.example.roomdbdemo.R
+//import com.example.roomdbdemo.R
 import java.util.*
 import kotlin.collections.ArrayList
 
@@ -53,7 +54,7 @@ class NotesAdapter(private val context: Context,private val listner: NotesClickL
         colors.add(R.color.color6)
         colors.add(R.color.color7)
 
-        var rndm= (0..colors.size).random()
+        var rndm= (0..colors.size-1).random()
         return colors.get(rndm)
     }
     fun filter(search :String){
@@ -72,7 +73,12 @@ class NotesAdapter(private val context: Context,private val listner: NotesClickL
 
         notelist.clear()
         notelist.addAll(fulllist)
+        notifyDataSetChanged()
 
+    }
+    interface NotesClickListner{
+        fun onClickListner(note: Note)
+        fun onLongClickListner(note: Note,cardView: CardView)
     }
 }
 class myvh(var view: View):RecyclerView.ViewHolder(view){
@@ -83,7 +89,3 @@ class myvh(var view: View):RecyclerView.ViewHolder(view){
 
 }
 
-interface NotesClickListner{
-    fun onClickListner(note: Note){}
-    fun onLongClickListner(note: Note,cardView: CardView){}
-}

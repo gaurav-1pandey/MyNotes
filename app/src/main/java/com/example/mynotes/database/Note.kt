@@ -15,4 +15,4 @@ data class Note(
     var note : String?,
     @ColumnInfo(name = "date")
     var date : String?
-)
+) :java.io.Serializable

@@ -41,7 +41,7 @@
     </androidx.appcompat.widget.Toolbar>
 
     <EditText
-        android:id="@+id/editTextTextPersonName"
+        android:id="@+id/ednote"
         android:layout_width="398dp"
         android:layout_height="588dp"
         android:layout_margin="8dp"
@@ -59,7 +59,7 @@
         app:layout_constraintVertical_bias="0.797" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName2"
+        android:id="@+id/edtitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"

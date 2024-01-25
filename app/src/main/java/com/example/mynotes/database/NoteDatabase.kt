@@ -7,6 +7,8 @@ import androidx.room.RoomDatabase
 
 @Database(entities = [Note::class], version = 1, exportSchema = false)
 abstract class NoteDatabase :RoomDatabase(){
+    //on compile thime the processor will autoomatically create the implementation toh this abstract function
+    //which will retuurn the instance of the noteDao
     abstract fun getNoteDao() : NoteDao
 
     companion object{
